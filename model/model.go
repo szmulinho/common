@@ -15,10 +15,10 @@ type Drug struct {
 
 type Drugs []string
 
-type CreatePrescInput struct {
+type Prescription struct {
 	PreID      int64  `json:"pre_id" gorm:"primaryKey;autoIncrement"`
-	Patient    string `json:"patient"`
 	Drugs      Drugs  `gorm:"type:text[]" json:"drugs"`
+	Patient    string `json:"patient"`
 	Expiration string `json:"expiration"`
 }
 

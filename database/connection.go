@@ -21,7 +21,7 @@ func Connect() (*gorm.DB, error) {
 		&model.Doctor{},
 		&model.Opinion{},
 		&model.User{},
-		&model.CreatePrescInput{},
+		&model.Prescription{},
 		&model.Drug{},
 		&model.Order{},
 	)
