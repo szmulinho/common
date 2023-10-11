@@ -1,5 +1,7 @@
 package model
 
+import "github.com/lib/pq"
+
 type Doctor struct {
 	ID       int64  `gorm:"primaryKey;autoIncrement"`
 	Login    string `gorm:"unique" json:"login"`
@@ -14,10 +16,10 @@ type Drug struct {
 }
 
 type CreatePrescInput struct {
-	PreID      int64  `json:"pre_id" gorm:"primaryKey;autoIncrement"`
-	Patient    string `json:"patient"`
-	Drugs      string `json:"drugs"`
-	Expiration string `json:"expiration"`
+	PreID      int64          `json:"pre_id" gorm:"primaryKey;autoIncrement"`
+	Patient    string         `json:"patient"`
+	Drugs      pq.StringArray `gorm:"type:text[]" json:"drugs"`
+	Expiration string         `json:"expiration"`
 }
 
 type Opinion struct {
