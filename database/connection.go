@@ -17,7 +17,14 @@ func Connect() (*gorm.DB, error) {
 		return nil, err
 	}
 
-	err = db.AutoMigrate(&model.Doctor{})
+	err = db.AutoMigrate(
+		&model.Doctor{},
+		&model.Opinion{},
+		&model.User{},
+		&model.CreatePrescInput{},
+		&model.Drug{},
+		&model.Order{},
+	)
 	if err != nil {
 		return nil, err
 	}
