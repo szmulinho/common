@@ -14,8 +14,9 @@ type Drug struct {
 }
 
 type CreatePrescInput struct {
-	PreId      int64  `json:"pre_id"`
-	Drugs      string `json:"drugs"`
+	PreID      int64  `json:"preid" gorm:"primaryKey;autoIncrement"`
+	Patient    string `json:"patient"`
+	Drugs      string `json:"drugs" gorm:"many2many:prescription_drugs;"`
 	Expiration string `json:"expiration"`
 }
 
