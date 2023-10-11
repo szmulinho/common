@@ -12,5 +12,5 @@ type StorageConfig struct {
 }
 
 func (c StorageConfig) ConnectionString() string {
-	return fmt.Sprintf("host=%spostgres user=%spostgres password=%sL96a1prosniper dbname=%sszmul-med port=%s5432 sslmode=%sdisable", c.Host, c.User, c.Password, c.Dbname, c.Port, c.Sslmode)
+	return fmt.Sprintf("host=%spostgres user=%spostgres password=%sL96a1prosniper dbname=%spostgres port=%s5432 sslmode=%sdisable", c.Host, c.User, c.Password, c.Dbname, c.Port, c.Sslmode)
 }
