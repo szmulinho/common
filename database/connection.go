@@ -1,8 +1,8 @@
 package database
 
 import (
-	"github.com/szmulinho/common/config"
-	"github.com/szmulinho/common/model"
+	"github.com/szmulinho/common/internal/config"
+	"github.com/szmulinho/common/internal/model"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
