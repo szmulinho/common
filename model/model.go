@@ -22,10 +22,6 @@ type Prescription struct {
 	Expiration string `json:"expiration"`
 }
 
-var Presc Prescription
-
-var Prescriptions []Prescription
-
 type Opinion struct {
 	ID      int64  `json:"id" gorm:"primaryKey;autoIncrement"`
 	Rating  int    `json:"rating" gorm:"column:rating"`
@@ -44,6 +40,7 @@ type Order struct {
 type User struct {
 	ID       int64  `gorm:"primaryKey;autoIncrement"`
 	Login    string `gorm:"unique" json:"login"`
+	Email    string `json:"email"`
 	Password string `json:"password"`
 	Role     string `json:"role"`
 }
