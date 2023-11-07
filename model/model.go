@@ -45,3 +45,13 @@ type User struct {
 	Password string `json:"password"`
 	Role     string `json:"role"`
 }
+
+type GithubUser struct {
+	ID          int64  `gorm:"unique_index"`
+	Login       string `json:"username"`
+	AvatarUrl   string `json:"avatar_url"`
+	HtmlUrl     string `json:"html_url"`
+	Email       string `json:"email"`
+	Role        string `json:"role"`
+	AccessToken string `json:"-"`
+}
